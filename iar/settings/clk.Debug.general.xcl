@@ -1,0 +1,13 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armSIM2.dll" 
+
+"C:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\Exe\clk.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armLibSupportUniversal.dll" 
+
+--device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm/config/debugger/NXP/LPC21xx_LPC22xx.dmac" 
+
+
+
+

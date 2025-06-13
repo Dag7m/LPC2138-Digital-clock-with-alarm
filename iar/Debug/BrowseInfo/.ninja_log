@@ -1,0 +1,13 @@
+# ninja log v5
+0	452	7715152760000000	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/main.xcl	7c34c4fcd6984e34
+78	503	7715152760000000	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/lcd.xcl	c99e621611ffac89
+508	674	7715152763331880	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/lcd.pbi	c75edb767a261f89
+456	807	7715152764636496	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/main.pbi	e726dfbd99bf838f
+809	909	7715152765727134	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbd	94911b1dd0f955ad
+911	2001	7715152776317710	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbw	524c48f8f311b6e4
+3	141	7715154094575641	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/main.pbi	e726dfbd99bf838f
+144	208	7715154095313362	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbd	94911b1dd0f955ad
+214	942	7715154102254055	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbw	524c48f8f311b6e4
+3	163	7715154155571430	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/main.pbi	e726dfbd99bf838f
+166	217	7715154156151759	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbd	94911b1dd0f955ad
+220	971	7715154163325528	C:/Users/Dagem/Desktop/LPC2138-clock/iar/Debug/BrowseInfo/clk.pbw	524c48f8f311b6e4

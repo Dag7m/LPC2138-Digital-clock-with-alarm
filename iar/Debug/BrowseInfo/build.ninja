@@ -1,0 +1,49 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$out
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  deps = gcc
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.xcl : COMPILER_XCL 
+    flags = C$:\Users\Dagem\Desktop\LPC2138-clock\src\lcd.c -o C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI-S -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\arm\inc\c\DLib_Config_Normal.h" --cpu_mode thumb -Ol --predef_macros C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.tmp
+    rspfile_name = C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.xcl.rsp
+    xclcommand = -source_file C$:\Users\Dagem\Desktop\LPC2138-clock\src\lcd.c -xcl_file C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.xcl -macro_file C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\arm\bin\iccarm.exe"
+
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+    flags = C$:\Users\Dagem\Desktop\LPC2138-clock\src\main.c -o C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI-S -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\arm\inc\c\DLib_Config_Normal.h" --cpu_mode thumb -Ol --predef_macros C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.tmp
+    rspfile_name = C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.xcl.rsp
+    xclcommand = -source_file C$:\Users\Dagem\Desktop\LPC2138-clock\src\main.c -xcl_file C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.2\arm\bin\iccarm.exe"
+
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.pbi : INDEXER C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.xcl | C$:\Users\Dagem\Desktop\LPC2138-clock\src\lcd.c
+    flags = -out=C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.pbi -f C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.xcl
+
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.xcl | C$:\Users\Dagem\Desktop\LPC2138-clock\src\main.c
+    flags = -out=C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.pbi -f C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbw : MAKEBROWSE C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbd
+    flags = C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbd -output C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbw
+
+build C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbd : PDBLINK C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.pbi | C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.pbi
+    flags = -M C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\clk.pbd C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\lcd.pbi C$:\Users\Dagem\Desktop\LPC2138-clock\iar\Debug\BrowseInfo\main.pbi
+

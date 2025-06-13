@@ -291,8 +291,6 @@ int main() {
     IO0DIR &= ~(SET | INC | DEC | SAVE); // Buttons as input
     IO0DIR |= BUZZER;
     IO0CLR = BUZZER;  // buzzer off initially
-    lcd_puts("Da clock");
-    delay_ms(300);
     lcd_init();
     rtc_init();
     
